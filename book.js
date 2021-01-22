@@ -6,4 +6,4 @@ constructor (author, title, genre) {
 }
 };
 
-module.exports = Book;
+export default Book;

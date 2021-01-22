@@ -22,4 +22,4 @@ Library.prototype.printInventory = function () {
   });
 };
 
-module.exports = Library;
+export default Library;
