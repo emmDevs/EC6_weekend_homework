@@ -2,24 +2,30 @@ class Library{
   constructor(books = []) {
   this.books = books;
 }
-};
 
-Library.prototype.bookCount = function () {
+bookCount () {
   return this.books.length;
 };
 
-Library.prototype.addBook = function (newBook) {
+addBook (newBook) {
   this.books.push(newBook);
 };
 
-Library.prototype.addBooks = function (newBooks) {
+addBooks (newBooks) {
   newBooks.forEach(book => this.books.push(book));
 };
 
-Library.prototype.printInventory = function () {
-  this.books.forEach((book) => {
-    console.log(`${book.title} by ${book.author}`);
+addBooks(newBooks) {
+  this.books = [...this.books, ...newBooks]; //this is the spread operator - it takes in what is already in this.books and adds whatever is in newBooks and creates a new array with all of them
+}
+
+printInventory () {
+  this.books.forEach(({ author, title }) => {
+    console.log(`${title} by ${author}`);
   });
 };
+};
+
 
 export default Library;
+
